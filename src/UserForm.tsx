@@ -42,7 +42,7 @@ const UserForm: React.FC = () => {
 
     // If no duplicates, submit the form
     try {
-      await axios.post('http://localhost:3002/users', formData);
+      await axios.post('https://your-json-server.onrender.com/users', formData);
       alert('User added successfully!');
       setFormData({
         firstName: '',
