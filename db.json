@@ -23,6 +23,14 @@
       "contact": "09069563562",
       "email": "Adebola1@gmail.com",
       "homeAddress": "55,Sosanya Str"
+    },
+    {
+      "id": "b6e4",
+      "firstName": "adeoye",
+      "lastName": "rebecca",
+      "contact": "23456789876",
+      "email": "thesegunonakoya@gmail.com",
+      "homeAddress": "ijegun"
     }
   ]
 }
