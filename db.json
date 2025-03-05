@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "8790",
+      "firstName": "Tunmise",
+      "lastName": "Adeoye",
+      "contact": "09030906361",
+      "email": "adeoyetunmise53@gmail.com",
+      "homeAddress": "55,Sosanya Str"
+    },
+    {
+      "id": "c722",
+      "firstName": "Daniel",
+      "lastName": "Aderounmu",
+      "contact": "09069563568",
+      "email": "Adebola@gmail.com",
+      "homeAddress": "55,Sosanya Str"
+    },
+    {
+      "id": "f9a2",
+      "firstName": "teeeeeeeee",
+      "lastName": "adeeeeee",
+      "contact": "09069563562",
+      "email": "Adebola1@gmail.com",
+      "homeAddress": "55,Sosanya Str"
+    }
+  ]
+}
