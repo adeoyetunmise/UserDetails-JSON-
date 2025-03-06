@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { User } from './types';
+import { User } from '../types';
 import { useNavigate } from 'react-router-dom';
 
 const UserList: React.FC = () => {
@@ -11,7 +11,7 @@ const UserList: React.FC = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get<User[]>('https://your-json-server.onrender.com/users');
+        const response = await axios.get<User[]>(`${process.env.NEXT_PUBLIC_API_URL}/users`);
         
         setUsers(response.data);
       } catch (error) {
@@ -23,12 +23,19 @@ const UserList: React.FC = () => {
   }, []);
 
   // Handle user deletion
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id?: number) => {
+    if (!id) return; // Prevent errors if id is undefined
+  
+    const confirmDelete = window.confirm('Are you sure you want to delete this user?');
+    if (!confirmDelete) return;
+  
     try {
-      await axios.delete(`http://localhost:3002/users/${id}`);
+      await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/users/${id}`);
+      
       // Remove the deleted user from the state
       setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
-      alert('are you sure you want to delete this user?!');
+  
+      alert('User deleted successfully!');
     } catch (error) {
       console.error('Error deleting user:', error);
     }

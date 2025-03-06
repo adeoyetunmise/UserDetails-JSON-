@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import UserForm from './UserForm';
-import UserList from './UserList';
+import UserForm from './components/UserForm';
+import UserList from './components/UserList';
 
 const App: React.FC = () => {
   return (

@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "components", "server.cjs"]
+  "include": ["src", "components", "json-server-backend/server.js"]
 }

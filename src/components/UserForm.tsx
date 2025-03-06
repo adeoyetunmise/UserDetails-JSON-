@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { User } from './types';
+import { User } from '../types';
 import { useNavigate } from 'react-router-dom';
-import { checkForDuplicateEmail, checkForDuplicateContact } from './utils/validation';
+import { checkForDuplicateEmail, checkForDuplicateContact } from '../utils/validation';
 
 const UserForm: React.FC = () => {
   const [formData, setFormData] = useState<User>({
@@ -42,7 +42,7 @@ const UserForm: React.FC = () => {
 
     // If no duplicates, submit the form
     try {
-      await axios.post('https://your-json-server.onrender.com/users', formData);
+      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/users`, formData);
       alert('User added successfully!');
       setFormData({
         firstName: '',
