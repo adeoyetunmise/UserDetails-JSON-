@@ -36,7 +36,7 @@ const UserList: React.FC = () => {
 
   return (
     <div className="card bg-base-200 shadow-xl p-6 mt-8">
-      <h2 className="text-2xl font-bold mb-4">User List (JSON Format)</h2>
+      <h2 className="text-2xl font-bold mb-4">User List</h2>
       <div className="overflow-x-auto">
         <pre className="bg-base-100 p-4 rounded-lg">
           {JSON.stringify(users, null, 2)}
