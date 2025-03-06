@@ -42,7 +42,7 @@ const UserForm: React.FC = () => {
 
     // If no duplicates, submit the form
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/users`, formData);
+      await axios.post('http://localhost:3002/users', formData);
       alert('User added successfully!');
       setFormData({
         firstName: '',

@@ -11,7 +11,7 @@ const UserList: React.FC = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get<User[]>(`${process.env.NEXT_PUBLIC_API_URL}/users`);
+        const response = await axios.get<User[]>('http://localhost:3002/users');
         
         setUsers(response.data);
       } catch (error) {
@@ -23,19 +23,12 @@ const UserList: React.FC = () => {
   }, []);
 
   // Handle user deletion
-  const handleDelete = async (id?: number) => {
-    if (!id) return; // Prevent errors if id is undefined
-  
-    const confirmDelete = window.confirm('Are you sure you want to delete this user?');
-    if (!confirmDelete) return;
-  
+  const handleDelete = async (id: number) => {
     try {
-      await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/users/${id}`);
-      
+      await axios.delete(`http://localhost:3002/users/${id}`);
       // Remove the deleted user from the state
       setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
-  
-      alert('User deleted successfully!');
+      alert('are you sure you want to delete this user?!');
     } catch (error) {
       console.error('Error deleting user:', error);
     }
